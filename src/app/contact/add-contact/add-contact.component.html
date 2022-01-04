@@ -1,0 +1,95 @@
+<div class="add-form-container">
+  <div class="ui icon message" *ngIf="newContact">
+    <i class="notched check green icon"></i>
+    <i class="close icon" (click)="newContact = null"></i>
+    <div class="content header">{{'new.contract.added.message' | translate}}</div>
+    <p>{{ newContact?.name }}</p>
+  </div>
+  <form
+    action="ui big form"
+    #contactForm="ngForm"
+    (submit)="onSubmit(contactForm)"
+    [class.loading]="loading"
+  >
+    <div class="fields">
+      <div class="eight wide field">
+        <label for="firstName">{{'first.name' | translate}}</label>
+        <input
+          type="text"
+          name="firstName"
+          id="firstName"
+          placeholder="First Name"
+          ngModel
+        />
+      </div>
+      <div class="eight wide field">
+        <label for="lastName"> {{'last.name' | translate}}</label>
+        <input
+          type="text"
+          name="lastName"
+          id="lastName"
+          placeholder="Last Name"
+          ngModel
+        />
+      </div>
+      <div class="field">
+        <label for="address">{{'address' | translate}} </label>
+        <input
+          type="text"
+          name="address"
+          id="address"
+          placeholder="Address"
+          ngModel
+        />
+      </div>
+      <div class="equal width field">
+        <div class="field">
+          <label for="phone"> {{'phone' | translate}} </label>
+          <input
+            type="text"
+            maxlength="5"
+            name="areaCode"
+            id="phone"
+            placeholder="(###)"
+            ngModel
+          />
+        </div>
+        <div class="field">
+          <label for="prefix"> &nbsp </label>
+          <input
+            type="text"
+            maxlength="3"
+            name="prefix"
+            id="prefix"
+            placeholder="###"
+            ngModel
+          />
+        </div>
+        <div class="field">
+          <label for="lineNumber"> &nbsp </label>
+          <input
+            type="text"
+            maxlength="4"
+            name="lineNumber"
+            id="lineNumber"
+            placeholder="####"
+            ngModel
+          />
+        </div>
+      </div>
+      <div class="field">
+        <label for="Photo"> {{'photo.url' | translate}}</label>
+        <input
+          type="text"
+          name="photo"
+          id="photo"
+          placeholder="https://cdn.com/profile.jpg"
+          ngModel
+        />
+      </div>
+    </div>
+    <button type="submit" class="ui large submit grey button right floated">
+      {{'submit' | translate}}
+    </button>
+  </form>
+</div>

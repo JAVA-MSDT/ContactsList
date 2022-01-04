@@ -1,0 +1,29 @@
+<div
+  class="card"
+  style="width: 16rem"
+  class="d-flex flex-column justify-content-center card-radius-10"
+>
+  <img
+    [src]="contact?.photoUrl"
+    alt="{{ contact?.name }} Photo"
+  />
+  <div class="card-body bg-light">
+    <div class="py-1">
+      <a class="" href="" attr.aria-label="{{ contact?.name }}">{{
+        contact?.name
+      }}</a>
+      <div class="py-1">{{ contact?.address }}</div>
+    </div>
+    <div class="py-1">
+      <span
+        ><fa-icon
+          [icon]="faPhone"
+          size="lg"
+          class="text-dark me-2"
+          flip="horizontal"
+        ></fa-icon
+        >{{ contact?.phone }}</span
+      >
+    </div>
+  </div>
+</div>
