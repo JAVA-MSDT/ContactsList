@@ -1,95 +1,132 @@
-<div class="add-form-container">
+<div class="add-form-container container p-3">
   <div class="ui icon message" *ngIf="newContact">
     <i class="notched check green icon"></i>
     <i class="close icon" (click)="newContact = null"></i>
-    <div class="content header">{{'new.contract.added.message' | translate}}</div>
+    <div class="content header">
+      {{ "new.contract.added.message" | translate }}
+    </div>
     <p>{{ newContact?.name }}</p>
   </div>
   <form
-    action="ui big form"
+    action="form"
     #contactForm="ngForm"
     (submit)="onSubmit(contactForm)"
     [class.loading]="loading"
   >
-    <div class="fields">
-      <div class="eight wide field">
-        <label for="firstName">{{'first.name' | translate}}</label>
+    <div class="form-group row mb-2">
+      <label class="col-sm-2 col-form-label" for="firstName">{{
+        "first.name" | translate
+      }}</label>
+      <div class="col-sm-10">
         <input
           type="text"
           name="firstName"
           id="firstName"
-          placeholder="First Name"
+          attr.placeholder="{{ 'first.name' | translate }}"
+          class="form-control"
           ngModel
         />
       </div>
-      <div class="eight wide field">
-        <label for="lastName"> {{'last.name' | translate}}</label>
+    </div>
+    <div class="form-group row mb-2">
+      <label class="col-sm-2 col-form-label" for="lastName">
+        {{ "last.name" | translate }}</label
+      >
+      <div class="col-sm-10">
         <input
           type="text"
           name="lastName"
           id="lastName"
-          placeholder="Last Name"
+          attr.placeholder="{{ 'last.name' | translate }}"
+          class="form-control"
           ngModel
         />
       </div>
-      <div class="field">
-        <label for="address">{{'address' | translate}} </label>
+    </div>
+    <div class="form-group row mb-2">
+      <label class="col-sm-2 col-form-label" for="address"
+        >{{ "address" | translate }}
+      </label>
+      <div class="col-sm-10">
         <input
           type="text"
           name="address"
           id="address"
-          placeholder="Address"
+          attr.placeholder="{{ 'address' | translate }}"
+          class="form-control"
           ngModel
         />
       </div>
-      <div class="equal width field">
-        <div class="field">
-          <label for="phone"> {{'phone' | translate}} </label>
+    </div>
+    <div class="form-group row mb-2">
+      <label id="phone-label" class="col-sm-2 col-form-label" for="phone">
+        {{ "phone" | translate }}
+      </label>
+      <div class="col">
+        <div class="">
           <input
             type="text"
             maxlength="5"
             name="areaCode"
             id="phone"
             placeholder="(###)"
+            class="form-control"
+            aria-labelledby="phone-label phone"
             ngModel
           />
         </div>
-        <div class="field">
-          <label for="prefix"> &nbsp </label>
+      </div>
+      <div class="col">
+        <div class="">
           <input
             type="text"
             maxlength="3"
             name="prefix"
             id="prefix"
             placeholder="###"
+            class="form-control"
+            aria-labelledby="phone-label prefix"
             ngModel
           />
         </div>
-        <div class="field">
-          <label for="lineNumber"> &nbsp </label>
+      </div>
+      <div class="col">
+        <div class="">
           <input
             type="text"
             maxlength="4"
             name="lineNumber"
             id="lineNumber"
             placeholder="####"
+            class="form-control"
+            aria-labelledby="phone-label lineNumber"
             ngModel
           />
         </div>
       </div>
-      <div class="field">
-        <label for="Photo"> {{'photo.url' | translate}}</label>
+    </div>
+    <div class="form-group row mb-4">
+      <label class="col-sm-2 col-form-label" for="Photo">
+        {{ "photo.url" | translate }}</label
+      >
+      <div class="col-sm-10">
         <input
           type="text"
           name="photo"
           id="photo"
-          placeholder="https://cdn.com/profile.jpg"
+          attr.placeholder="{{ 'photo.url' | translate }}"
+          class="form-control"
           ngModel
         />
       </div>
     </div>
-    <button type="submit" class="ui large submit grey button right floated">
-      {{'submit' | translate}}
+    <button
+      type="submit"
+      class="btn btn-primary w-25"
+      disabled="!contactForm.valid"
+      attr.aria-disabled="!contactForm.valid"
+    >
+      {{ "submit" | translate }}
     </button>
   </form>
 </div>
