@@ -1,8 +1,11 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import {
+  faCheckDouble,
+  faTimesCircle,
+} from '@fortawesome/free-solid-svg-icons';
 import { Contact } from 'src/app/shared/domains/contact';
-import { environment } from 'src/environments/environment';
+import { ApiService } from 'src/app/shared/services/api.service';
 
 @Component({
   selector: 'cts-add-contact',
@@ -13,7 +16,9 @@ export class AddContactComponent implements OnInit {
   loading: boolean = false;
   newContact: any;
   readonly contactsApi = 'contacts';
-  constructor(private http: HttpClient) {}
+  faCheckDouble = faCheckDouble;
+  faTimesCircle = faTimesCircle;
+  constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {}
 
@@ -28,15 +33,11 @@ export class AddContactComponent implements OnInit {
       photoUrl: formValues.photo,
     };
 
-    const headers = new HttpHeaders();
-    headers.append('content-type', 'application/json');
-    this.http
-      .post(`${environment.BASE_URL}/${this.contactsApi}`, contact, { headers })
-      .subscribe((data) => {
-        console.log(data);
-        form.reset();
-        this.loading = false;
-        this.newContact = data as Contact;
-      });
+    this.apiService.post(this.contactsApi, contact).subscribe((data) => {
+      console.log(data);
+      form.reset();
+      this.loading = false;
+      this.newContact = data as Contact;
+    });
   }
 }

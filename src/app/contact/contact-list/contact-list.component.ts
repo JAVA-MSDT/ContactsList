@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Contact } from 'src/app/shared/domains/contact';
+import { ApiService } from 'src/app/shared/services/api.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -12,11 +13,10 @@ import { environment } from 'src/environments/environment';
 export class ContactListComponent implements OnInit {
   contacts: Contact[] = [];
   readonly contactsApi = 'contacts';
-  constructor(private http: HttpClient) {}
+  constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
-    this.http
-      .get<Contact[]>(`${environment.BASE_URL}/${this.contactsApi}`)
+    this.apiService.get<Contact[]>(this.contactsApi)
       .subscribe((contactsResponse) => (this.contacts = contactsResponse));
   }
 }

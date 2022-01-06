@@ -1,0 +1,47 @@
+<div class="container mb-4">
+  <form
+    class="border p-4 bg-secondary w-50 mx-auto text-white"
+    #loginForm="ngForm"
+    (submit)="onSubmit(loginForm)"
+  >
+    <div class="form-group row mb-3">
+      <label class="col-form-label" for="username">{{
+        "username" | translate
+      }}</label>
+      <input
+        type="text"
+        class="form-control"
+        id="username"
+        name="username"
+        aria-describedby="emailHelp"
+        placeholder="{{ 'enter.username' | translate }}"
+        ngModel
+      />
+      <small id="emailHelp" class="form-text text-white">{{
+        "no.share.username.password" | translate
+      }}</small>
+    </div>
+    <div class="form-group row mb-3">
+      <label class="col-form-label" for="password">{{
+        "password" | translate
+      }}</label>
+      <input
+        type="password"
+        class="form-control col"
+        id="password"
+        name="password"
+        placeholder="{{ 'password' | translate }}"
+        ngModel
+      />
+    </div>
+    <div class="form-check mb-3">
+      <input type="checkbox" class="form-check-input" id="checkMeOut" />
+      <label class="form-check-label" for="checkMeOut">{{
+        "check.me.out" | translate
+      }}</label>
+    </div>
+    <button type="submit" class="btn btn-primary">
+      {{ "login" | translate }}
+    </button>
+  </form>
+</div>

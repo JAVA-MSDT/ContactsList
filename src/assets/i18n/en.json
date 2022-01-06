@@ -1,10 +1,20 @@
 {
     "contact.manager": "Contact Manager",
+    "contacts": "Contacts",
+    "add.contact": "Add Contact",
     "new.contract.added.message": "New Content Added",
     "first.name": "First Name",
     "last.name": "Last Name",
     "address": "Address",
     "phone": "Phone",
     "photo.url": "Photo URL",
-    "submit": "Submit"
+    "submit": "Submit",
+    "remove.message": "Remove Message",
+    "username": "Username",
+    "enter.username": "Enter Username",
+    "password": "Passowrd",
+    "check.me.out": "Check Me Out",
+    "no.share.username.password": "We'll never share your username with anyone else.",
+    "login": "Login",
+    "logout": "Logout"
 }

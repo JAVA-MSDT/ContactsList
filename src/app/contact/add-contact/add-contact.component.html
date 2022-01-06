@@ -1,11 +1,32 @@
 <div class="add-form-container container p-3">
-  <div class="ui icon message" *ngIf="newContact">
-    <i class="notched check green icon"></i>
-    <i class="close icon" (click)="newContact = null"></i>
-    <div class="content header">
-      {{ "new.contract.added.message" | translate }}
+  <div
+    class="alert alert-success"
+    role="alert"
+    aria-live="polite"
+    *ngIf="newContact"
+  >
+    <div class="d-flex align-items-center">
+      <div class="p-2">
+        <fa-icon class="" [icon]="faCheckDouble" size="2x"></fa-icon>
+      </div>
+      <div class="p-2">
+        {{ "new.contract.added.message" | translate }} {{ newContact?.name }}
+      </div>
+      <div class="remove-message p-2">
+        <a
+          href="javascript:void(0);"
+          (click)="newContact = null"
+          attr.aria-label="{{ 'remove.message' | translate }}"
+          title="{{ 'remove.message' | translate }}"
+        >
+          <fa-icon
+            class="contacts-icon"
+            [icon]="faTimesCircle"
+            size="2x"
+          ></fa-icon
+        ></a>
+      </div>
     </div>
-    <p>{{ newContact?.name }}</p>
   </div>
   <form
     action="form"
@@ -123,7 +144,7 @@
     <button
       type="submit"
       class="btn btn-primary w-25"
-      disabled="!contactForm.valid"
+      attr.disabled="!contactForm.valid"
       attr.aria-disabled="!contactForm.valid"
     >
       {{ "submit" | translate }}
