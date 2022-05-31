@@ -75,9 +75,9 @@ m2=1
       <w>190</w>
       <h>280</h>
     </coordinates>
-    <panel_attributes>Adress
+    <panel_attributes>Address
 --
-long adressId
+long addressId
 String addressTitle
 String contry
 String provenance
@@ -139,7 +139,7 @@ String middleName
 String lastName
 String contactTitle
 String avatarUrl
-Collection&lt;Adress&gt; adresses
+Collection&lt;Address&gt; addresses
 Collection&lt;SocialMedia&gt; socialMedia
 Collection&lt;Phone&gt; Phone
 Collection&lt;Contact&gt; contacts
