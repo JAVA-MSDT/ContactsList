@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>500</x>
+      <y>30</y>
+      <w>240</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>UserRole
+--
+long roleId
+String role
+--
+Constructor()
+setters()
+getters()
+toString()
+equal()
+hashCode()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>130</x>
+      <y>30</y>
+      <w>260</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>User
+--
+long userId
+String username
+String password
+Collection&lt;UserRole&gt; userRole
+boolean accountNonExpired
+boolean accountNonLocked
+boolean credentialsNonExpired
+boolean enabled
+--
+Constructor()
+setters()
+getters()
+toString()
+equal()
+hashCode()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>380</x>
+      <y>50</y>
+      <w>140</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..n
+m2=1
+</panel_attributes>
+    <additional_attributes>120.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>130</x>
+      <y>350</y>
+      <w>190</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>Adress
+--
+long adressId
+String addressTitle
+String contry
+String provenance
+String city
+String street
+String zipCode
+String buildingNumber
+String apartmentNumber
+--
+Constructor()
+setters()
+getters()
+toString()
+equal()
+hashCode()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>930</x>
+      <y>350</y>
+      <w>160</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>SocialMedia
+--
+long socialId
+String socialMediaTitle
+String title
+String link
+--
+Constructor()
+setters()
+getters()
+toString()
+equal()
+hashCode()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>500</x>
+      <y>350</y>
+      <w>260</w>
+      <h>310</h>
+    </coordinates>
+    <panel_attributes>Contact
+--
+long contactId
+String username
+String firstName
+String middleName
+String lastName
+String contactTitle
+String avatarUrl
+Collection&lt;Adress&gt; adresses
+Collection&lt;SocialMedia&gt; socialMedia
+Collection&lt;Phone&gt; Phone
+Collection&lt;Contact&gt; contacts
+--
+Constructor()
+setters()
+getters()
+toString()
+equal()
+hashCode()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>550</x>
+      <y>250</y>
+      <w>160</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+a contact is a contact
+m1=1
+m2=1.n
+</panel_attributes>
+    <additional_attributes>130.0;110.0;130.0;20.0;10.0;20.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>310</x>
+      <y>380</y>
+      <w>210</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..n
+m2=1
+</panel_attributes>
+    <additional_attributes>10.0;20.0;190.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>750</x>
+      <y>370</y>
+      <w>200</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..n
+m2=1
+</panel_attributes>
+    <additional_attributes>180.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>530</x>
+      <y>730</y>
+      <w>160</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>Phone
+--
+long phoneId
+String phoneTitle
+String number
+--
+Constructor()
+setters()
+getters()
+toString()
+equal()
+hashCode()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>600</x>
+      <y>650</y>
+      <w>50</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..n
+m2=1
+</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>850</x>
+      <y>630</y>
+      <w>140</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Project UML
+fontsize=20</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>830</x>
+      <y>110</y>
+      <w>140</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Security UML
+fontsize=20</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
