@@ -35,16 +35,28 @@ public class Contact {
     @Column(name = "avatar_url")
     private String contactAvatarUrl;
 
-    @OneToMany
+    @OneToMany(orphanRemoval = true)
+    @JoinTable(name = "contact_list",
+            joinColumns = {@JoinColumn(name = "self_id", referencedColumnName = "contact_id")},
+            inverseJoinColumns ={@JoinColumn(name = "my_contact_id", referencedColumnName = "contact_id")} )
     private Set<Contact> contacts;
 
-    @ManyToMany
+    @ManyToMany()
+    @JoinTable(name = "contact_address",
+            joinColumns = {@JoinColumn(name = "contact_id", referencedColumnName = "contact_id")},
+            inverseJoinColumns ={@JoinColumn(name = "address_id", referencedColumnName = "address_id")} )
     private Set<Address> addresses;
 
-    @OneToMany
+    @OneToMany(orphanRemoval = true)
+    @JoinTable(name = "contact_social_media",
+            joinColumns = {@JoinColumn(name = "contact_id", referencedColumnName = "contact_id")},
+            inverseJoinColumns ={@JoinColumn(name = "social_media_id", referencedColumnName = "social_id")} )
     private Set<SocialMedia> socialMedia;
 
-    @OneToMany
+    @OneToMany(orphanRemoval = true)
+    @JoinTable(name = "contact_phone",
+            joinColumns = {@JoinColumn(name = "contact_id", referencedColumnName = "contact_id")},
+            inverseJoinColumns ={@JoinColumn(name = "phone_id", referencedColumnName = "phone_id")} )
     private Set<Phone> phones;
 
 

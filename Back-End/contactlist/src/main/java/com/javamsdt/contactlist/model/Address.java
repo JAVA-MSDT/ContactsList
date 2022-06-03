@@ -38,10 +38,10 @@ public class Address {
     private String zipCode;
 
     @Column(name = "building_number")
-    private String buildingNumber;
+    private int buildingNumber;
 
     @Column(name = "apartment_number")
-    private String apartmentNumber;
+    private int apartmentNumber;
 
 
 }
